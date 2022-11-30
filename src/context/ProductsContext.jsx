@@ -7,12 +7,12 @@ const ProductsContext = createContext()
 // Componente Proveedor de Contexto
 const ProductsProvider = (props) => {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const fetchApi = async () => {
     const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item'
     try {
       const results = await axios.get(`${URL}`)
-      console.log('results', results.data)
       setProducts(results.data)
     } catch (error) {
       console.log('error', error)
@@ -21,10 +21,12 @@ const ProductsProvider = (props) => {
 
   useEffect(() => {
     fetchApi()
+    setLoading(false)
   }, [])
 
   const value = {
-    products
+    products,
+    loading
   }
 
   return (
