@@ -20,8 +20,10 @@ const ProductsProvider = (props) => {
   }
 
   useEffect(() => {
-    fetchApi()
-    setLoading(false)
+    setTimeout(() => {
+      fetchApi()
+      setLoading(false)
+    }, 2000)
   }, [])
 
   const value = {
