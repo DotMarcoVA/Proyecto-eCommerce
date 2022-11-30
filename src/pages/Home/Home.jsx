@@ -1,22 +1,25 @@
 import React from 'react'
+import Cards from '../../components/Cards/Cards'
 import { useProductsContext } from '../../context/ProductsContext'
+import 'bulma/css/bulma.min.css'
 
 const Home = () => {
   const context = useProductsContext()
   console.log(context.products)
   return (
     <>
-      {
-      context.loading
-        ? <h1> Cargando ... </h1>
-        : context.products.map((p) => (
-          <div key={p._id}>
-            <h4>{p.product_name}</h4>
-            <h6>{p.description}</h6>
-            <p>${p.price}</p>
-          </div>
-        ))
-    }
+      <div className='columns is-multiline'>
+        {
+        context.loading
+          ? <h1> Cargando ... </h1>
+          : context.products.map((element, i) => (
+            <Cards
+              products={element}
+              key={i}
+            />
+          ))
+      }
+      </div>
     </>
   )
 }
