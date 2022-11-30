@@ -22,11 +22,25 @@ const ProductsProvider = (props) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    setProducts(getProducts)
+    setProducts(getProducts())
     console.log(products)
   })
 
+  const value = {
+    products
+  }
+
   return (
-    <div />
+    <ProductsContext.Provider value={value}>{props.children}</ProductsContext.Provider>
   )
+}
+
+const useProductsContext = () => {
+  const context = useContext(ProductsContext)
+  return context
+}
+
+export {
+  ProductsProvider,
+  useProductsContext
 }
