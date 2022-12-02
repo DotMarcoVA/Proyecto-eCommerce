@@ -10,7 +10,7 @@ const ProductsProvider = (props) => {
   const [loading, setLoading] = useState(true)
 
   const fetchApi = async () => {
-    const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item'
+    const URL = 'https://e-commerce-backend-production-ad56.up.railway.app/api/v1/item'
     try {
       const results = await axios.get(`${URL}`)
       setProducts(results.data)
