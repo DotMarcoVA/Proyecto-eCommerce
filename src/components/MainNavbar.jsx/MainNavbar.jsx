@@ -19,7 +19,7 @@ const MainNavbar = () => {
             <Nav.Link href='#action1'>Home</Nav.Link>
           </Nav>
           <div className='cart-icon'>
-            <BsFillCartFill />
+            {/* <BsFillCartFill /> icono carrito de compras */}
           </div>
           <Form className='d-flex'>
             <Form.Control
