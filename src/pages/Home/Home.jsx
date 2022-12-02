@@ -5,7 +5,6 @@ import './home.css'
 
 const Home = () => {
   const context = useProductsContext()
-  console.log(context.products)
   return (
     <>
       <div className='container'>

@@ -5,14 +5,19 @@ import React from 'react'
 import './cards.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Card } from 'react-bootstrap'
-
+import { useProductsContext } from '../../context/ProductsContext'
 
 
 const Cards = ({ products }) => {
-
+  const context = useProductsContext()
   return (
     <>
-      <Card style={{ width: '15rem' }}>
+      <Card
+        style={{ width: '15rem' }} onClick={() => {
+          context.setSelectedItem(products._id)
+          console.log(context.item) 
+        }}
+      >
         <Card.Img variant='top' src={products.image} />
         <Card.Body>
           <Card.Title>{products.product_name}</Card.Title>
