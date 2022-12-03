@@ -1,5 +1,6 @@
 import React from 'react'
 import Cards from '../../components/Cards/Cards'
+import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
 import { useProductsContext } from '../../context/ProductsContext'
 import './home.css'
 
@@ -7,6 +8,7 @@ const Home = () => {
   const context = useProductsContext()
   return (
     <>
+      <MainNavbar />
       <div className='container'>
         {
         context.loading
