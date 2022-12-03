@@ -26,4 +26,4 @@ const Cards = ({ products }) => {
   )
 }
 
-export default Cards
+export default Cards 
