@@ -31,3 +31,4 @@ const DetailsItem = ({ details }) => {
 }
 
 export default DetailsItem
+
