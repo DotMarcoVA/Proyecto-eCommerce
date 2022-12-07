@@ -1,6 +1,7 @@
 import React from 'react'
 import './MainNavbar.css'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 // import { BsFillCartFill } from 'react-icons/bs'
 
 const MainNavbar = () => {
@@ -30,8 +31,8 @@ const MainNavbar = () => {
             <Button variant='info'>Search</Button>
           </Form>
           <Nav className='count-buttons'>
-            <Button className='count-buttons'>Sign up</Button>
-            <Button className='count-buttons'>Log in</Button>
+            <Link to='/login'><Button className='count-buttons'>Log in</Button></Link>
+            <Link to='/signup'><Button className='count-buttons'>Sign up</Button></Link>
           </Nav>
         </Navbar.Collapse>
         <div className='vr' />
