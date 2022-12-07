@@ -8,9 +8,9 @@ const ProductsContext = createContext()
 const ProductsProvider = (props) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const [item, setItem] = useState({})
-  const [selectedItem, setSelectedItem] = useState()
-  const [loadingItem, setLoadingItem] = useState(true)
+  const [userName, setuserName] = useState('')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const fetchApi = async () => {
     const URL = 'https://e-commerce-backend-production-ad56.up.railway.app/api/v1/item'
@@ -22,34 +22,20 @@ const ProductsProvider = (props) => {
     }
   }
 
-  const fetchItem = async () => {
-    const IURL = `https://e-commerce-backend-production-ad56.up.railway.app/api/v1/item/${selectedItem}`
-    try {
-      const results = await axios.get(`${IURL}`)
-      setItem(results.data)
-    } catch (error) {
-      console.log('error', error)
-    }
-  }
-
   useEffect(() => {
     fetchApi()
     setLoading(false)
   }, [])
 
-  useEffect(() => {
-    if (selectedItem) {
-      fetchItem()
-      setLoadingItem(false)
-    }
-  }, [selectedItem])
-
   const value = {
     products,
     loading,
-    setSelectedItem,
-    loadingItem,
-    item
+    userName,
+    isLoggedIn,
+    setuserName,
+    setIsLoggedIn,
+    isAdmin,
+    setIsAdmin
   }
 
   return (
