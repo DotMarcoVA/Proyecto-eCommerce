@@ -6,6 +6,8 @@ const Index = () => {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='*' element={<img src='https://http.cat/404' alt='' srcset='' />} />
       </Routes>
     </>
