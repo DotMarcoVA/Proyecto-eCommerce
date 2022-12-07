@@ -8,7 +8,7 @@ const Index = () => {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/details' element={<Details />}>
+        <Route path=':pid' element={<Details />}>
           <Route path=':pid' element={<DetailsItem />} />
         </Route>
         <Route path='*' element={<img src='https://http.cat/404' alt='' srcset='' />} />

@@ -1,7 +1,10 @@
+/* eslint-disable react/jsx-indent */
+/* eslint-disable no-trailing-spaces */
 // import { Outlet } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams /* useNavigate */ } from 'react-router-dom'
+import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
 import DetailsItem from './DetailsItem'
 
 const Details = () => {
@@ -19,7 +22,7 @@ const Details = () => {
     }
   }
 
-  useEffect(() => {
+  useEffect(() => { 
     fetchItem(pid)
     setLoadingDetails(false)
   }, [])
@@ -28,17 +31,13 @@ const Details = () => {
       {
       loadingDetails
         ? <h1> Cargando </h1>
-        : <div>
-          <DetailsItem />
-          <h2>{itemDetails.product_name}</h2>
-          <h5>{itemDetails.category}</h5>
-          <h4>{itemDetails.brand}</h4>
-          <h4>{itemDetails.price}</h4>
-          <p>{itemDetails.sku}</p>
-          <p>{itemDetails.description}</p>
-          <button style={{ }}>Comprar</button>
-          {/* eslint-disable-next-line react/jsx-closing-tag-location */}
-        </div>
+        : <> 
+          <MainNavbar />
+          <DetailsItem 
+            details={itemDetails}
+          />
+          </>
+          
     }
 
     </>

@@ -1,8 +1,7 @@
 import React from 'react'
 import './MainNavbar.css'
-
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
-import { BsFillCartFill } from 'react-icons/bs'
+// import { BsFillCartFill } from 'react-icons/bs'
 
 const MainNavbar = () => {
   return (
