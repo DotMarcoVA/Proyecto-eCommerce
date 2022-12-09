@@ -3,6 +3,7 @@ import './MainNavbar.css'
 
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
 import { BsFillCartFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 const MainNavbar = () => {
   return (
@@ -19,7 +20,7 @@ const MainNavbar = () => {
             <Nav.Link href='#action1'>Home</Nav.Link>
           </Nav>
           <div className='cart-icon'>
-            {/* <BsFillCartFill /> icono carrito de compras */}
+            <BsFillCartFill /> icono carrito de compras
           </div>
           <Form className='d-flex'>
             <Form.Control
@@ -31,8 +32,16 @@ const MainNavbar = () => {
             <Button variant='info'>Search</Button>
           </Form>
           <Nav className='count-buttons'>
-            <Button className='count-buttons'>Sign up</Button>
-            <Button className='count-buttons'>Log in</Button>
+            <Link to='/signup'>
+              <Button className='count-buttons'>
+                Sign up
+              </Button>
+            </Link>
+            <Link to='/login'>
+              <Button className='count-buttons'>
+                Log in
+              </Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
         <div className='vr' />
