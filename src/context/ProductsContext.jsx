@@ -8,6 +8,9 @@ const ProductsContext = createContext()
 const ProductsProvider = (props) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [userName, setuserName] = useState('')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const fetchApi = async () => {
     const URL = 'https://e-commerce-backend-production-ad56.up.railway.app/api/v1/item'
@@ -26,7 +29,13 @@ const ProductsProvider = (props) => {
 
   const value = {
     products,
-    loading
+    loading,
+    userName,
+    isLoggedIn,
+    setuserName,
+    setIsLoggedIn,
+    isAdmin,
+    setIsAdmin
   }
 
   return (
