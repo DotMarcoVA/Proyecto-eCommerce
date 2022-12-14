@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { loginUserService } from '../../services/userServices'
 import { Button, Form } from 'react-bootstrap'
 import useForm from '../../hooks/useForm'
+import './login.css'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ const Login = () => {
   })
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form className='logForm' onSubmit={handleSubmit}>
       <Form.Group className='mb-3' controlId='email'>
         <Form.Label>Email address</Form.Label>
         <Form.Control

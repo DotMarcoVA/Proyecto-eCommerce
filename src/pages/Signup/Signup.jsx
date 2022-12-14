@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { registerUserService } from '../../services/userServices'
 import { Button, Form } from 'react-bootstrap'
 import useForm from '../../hooks/useForm'
+import './signup.css'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ const Signup = () => {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form className='signForm' onSubmit={handleSubmit}>
         {/* controlId es el id del label y el input */}
         <Form.Group className='mb-3' controlId='first_name'>
           <Form.Label>First Name</Form.Label>
