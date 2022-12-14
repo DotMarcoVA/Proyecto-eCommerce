@@ -4,12 +4,16 @@ import Details from '../pages/Details/Details'
 import DetailsItem from '../pages/Details/DetailsItem'
 import Login from '../pages/Login/Login'
 import Signup from '../pages/Signup/Signup'
+import Dashboard from '../pages/Dashboard/Dashboard'
+import AddProduct from '../pages/AddProduct/AddProduct'
 
 const Index = () => {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/addproduct' element={<AddProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path=':pid' element={<Details />}>
