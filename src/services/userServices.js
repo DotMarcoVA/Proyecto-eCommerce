@@ -1,15 +1,23 @@
 import axios from 'axios'
 
-<<<<<<< HEAD
-const BASE_URL = 'https://e-commerce-backend-production-ad56.up.railway.app/api/v1'
-
-const registerUserService = (data) => axios.post(`${BASE_URL}/signup`, data)
-=======
 const BASE_URL = 'https://e-commerce-backend-production-ad56.up.railway.app/api/v1/'
 
+axios.interceptors.request.use((config) => {
+  const user = window.localStorage.getItem('token')
+
+  if (user) {
+    config.headers.Authorization = `JWT ${user}`
+  }
+  console.log('Request config headers:', config.headers)
+  return config
+},
+(error) => {
+  return Promise.reject(error)
+}
+)
+
 const registerUserService = (data) => axios.post(`${BASE_URL}/signup`, data)
-
->>>>>>> e0839473f865f21da01a7e72907377b21dfb8b5a
 const loginUserService = (data) => axios.post(`${BASE_URL}/login`, data)
+const getSingleUser = (id) => axios.get(`${BASE_URL}/user/${id}`)
 
-export { registerUserService, loginUserService }
+export { registerUserService, loginUserService, getSingleUser }
