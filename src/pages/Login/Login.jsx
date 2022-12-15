@@ -2,6 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import { loginUserService } from '../../services/userServices'
 import { Button, Form } from 'react-bootstrap'
 import useForm from '../../hooks/useForm'
+<<<<<<<<< Temporary merge branch 1
+import { AuthContext } from '../../context/AuthContext'
+import { useContext } from 'react'
+=========
+import './login.css'
+>>>>>>>>> Temporary merge branch 2
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext)
