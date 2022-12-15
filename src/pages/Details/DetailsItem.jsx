@@ -18,7 +18,6 @@ const DetailsItem = ({ details }) => {
           <h4> ${details.price}</h4>
 
           <div className='button'>
-            <button className='btn btn-primary' style={{ }}>Comprar</button>
             {!isAuth
               ? (
                 <>
