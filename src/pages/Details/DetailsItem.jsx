@@ -22,8 +22,9 @@ const DetailsItem = ({ details }) => {
             {!isAuth
               ? (
                 <>
-                  <p>Inicia Sesion para proceder a la compra</p>
                   <div className='button'>
+                    <br />
+                    <p>Inicia Sesion para proceder a la compra</p>
                     <Link to='/login'><button className='btn btn-primary' style={{ }}>Iniciar Sesion</button></Link>
                   </div>
                 </>
