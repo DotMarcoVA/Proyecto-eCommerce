@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
+import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
 import { AuthContext } from '../../context/AuthContext'
 import { getSingleUser } from '../../services/userServices'
 
@@ -22,6 +23,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <MainNavbar />
       <div>
         <h2>Profile</h2>
         <p> Welcome {userData.first_name}</p>
