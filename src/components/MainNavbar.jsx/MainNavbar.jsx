@@ -14,7 +14,7 @@ const MainNavbar = () => {
       <Container fluid>
         <Navbar.Brand href='#'>
           <Link to='/'>
-            <img src={Logo} alt='' />
+            <img src={Logo} style={{ width: '60px' }} alt='logo' />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
@@ -60,8 +60,8 @@ const MainNavbar = () => {
                   )
                 : (
                   <>
-                    <Button className='count-buttons'><Link to='/dashboard'>My Account</Link></Button>
-                    <Button className='count-buttons' variant='outline-danger' onClick={logout}>Log Out</Button>
+                    <Button variant='outline-dark' className='count-buttons'><Link to='/dashboard'>My Account</Link></Button>
+                    <Button className='count-buttons' variant='outline-danger' onClick={logout}><Link to='/' style={{ textDecoration: 'none' }}>Log Out</Link></Button>
                   </>
                   )
 }
