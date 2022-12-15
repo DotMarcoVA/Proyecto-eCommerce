@@ -1,6 +1,34 @@
 .count-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 10px;
 }
+
 .buttons{
     margin: 10px;
+}
+
+.shopping-cart{
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+/* .shopping-cart:hover{
+    background-image: url('/src/assets/animated-cart.gif');
+    background-position: center;
+    background-size: cover;
+} */
+
+.customer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand{
+    display: flex;
+    justify-content: center;
 }
