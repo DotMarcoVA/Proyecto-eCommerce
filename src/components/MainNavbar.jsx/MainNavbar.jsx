@@ -1,14 +1,21 @@
-import React from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 import './MainNavbar.css'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Logo from '../../assets/cat.png'
+import Cart from '../../assets/cart.png'
 
 const MainNavbar = () => {
+  const { isAuth, logout, user } = useContext(AuthContext)
+
   return (
     <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
       <Container fluid>
         <Navbar.Brand href='#'>
-          <img src='./src/assets/cat.png' alt='logo' />
+          <Link to='/'>
+            <img src={Logo} alt='' />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
@@ -17,16 +24,21 @@ const MainNavbar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link to='/addproduct'>
-              <Button variant='outline-info'>Add New Product</Button>{' '}
-            </Link>
+            {user?.role === 'ADMIN'
+              ? (
+                <Link to='/addproduct'>
+                  <Button variant='outline-info'>Add New Product</Button>{' '}
+                </Link>
+                )
+              : <></>}
+
           </Nav>
 
           <Form className='customer d-flex'>
             <input
               className='shopping-cart'
-              type='image' id='image' alt='Login'
-              src='./src/assets/cart.png'
+              type='image' id='image' alt=''
+              src={Cart}
             />
             <Form.Control
               type='search'
@@ -38,9 +50,22 @@ const MainNavbar = () => {
           </Form>
 
           <Nav className='count-buttons'>
-            <Link to='/login'><Button className='count-buttons'>Log in</Button></Link>
-            <Link to='/signup'><Button className='count-buttons'>Sign up</Button></Link>
-            <Button className='count-buttons' variant='outline-danger'>Log Out</Button>
+            {
+              !isAuth
+                ? (
+                  <>
+                    <Link to='/login'><Button className='count-buttons'>Log in</Button></Link>
+                    <Link to='/signup'><Button className='count-buttons'>Sign up</Button></Link>
+                  </>
+                  )
+                : (
+                  <>
+                    <Button className='count-buttons'><Link to='/dashboard'>My Account</Link></Button>
+                    <Button className='count-buttons' variant='outline-danger' onClick={logout}>Log Out</Button>
+                  </>
+                  )
+}
+
           </Nav>
         </Navbar.Collapse>
         <div className='vr' />
