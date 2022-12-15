@@ -14,7 +14,7 @@ const MainNavbar = () => {
       <Container fluid>
         <Navbar.Brand href='#'>
           <Link to='/'>
-            <img src={Logo} alt='' />
+            <img src={Logo} style={{ width: '60px' }} alt='logo' />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
