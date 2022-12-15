@@ -18,6 +18,7 @@ axios.interceptors.request.use((config) => {
 
 const registerUserService = (data) => axios.post(`${BASE_URL}/signup`, data)
 const loginUserService = (data) => axios.post(`${BASE_URL}/login`, data)
+const postProductService = (data) => axios.post(`${BASE_URL}/item`, data)
 const getSingleUser = (id) => axios.get(`${BASE_URL}/user/${id}`)
 
-export { registerUserService, loginUserService, getSingleUser }
+export { registerUserService, loginUserService, getSingleUser, postProductService }
