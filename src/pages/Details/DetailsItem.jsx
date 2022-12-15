@@ -5,25 +5,26 @@ import { Link } from 'react-router-dom'
 
 const DetailsItem = ({ details }) => {
   return (
-    <>
-      <>
-        <Link to='/' className='botOn'>Atrás</Link>
-        <div className='cardContainer'>
-          <img src={details.image} />
-          <div className='cardDescription'>
-            <h2>{details.product_name}</h2>
-            <h5>{details.category}</h5>
-            <h4>{details.brand}</h4>
-            <p>{details.description}</p>
-            <h4> ${details.price}</h4>
+    <div className='detailsContainer'>
+      <div className='cardContainer'>
+        <img src={details.image} />
+        <div className='cardDescription'>
+          <h2>{details.product_name}</h2>
+          <h5>{details.category}</h5>
+          <h4>{details.brand}</h4>
+          <p>{details.description}</p>
+          <h4> ${details.price}</h4>
 
-            <div className='button'>
-              <button className='btn btn-primary' style={{ }}>Comprar</button>
-            </div>
+          <div className='button'>
+            <button className='btn btn-primary' style={{ }}>Comprar</button>
           </div>
         </div>
-      </>
-    </>
+        <Link to='/' className='botOn'>
+          <img className='back-arrow' src='../src/assets/back-arrow.png' alt='back' />
+          <p>Ver lista de productos</p>
+        </Link>
+      </div>
+    </div>
   )
 }
 

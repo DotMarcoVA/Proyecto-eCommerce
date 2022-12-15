@@ -7,11 +7,27 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 img{
-  width: 40%;
+  width: 25rem;
 }
 
 .cardDescription{
   width: 40%;
+}
+
+.detailsContainer{
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.back-arrow{
+  width: 40px;
+  height: 40px;
 }
