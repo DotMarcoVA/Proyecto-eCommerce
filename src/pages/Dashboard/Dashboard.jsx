@@ -23,7 +23,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <MainNavbar />
+      <div>
+        <MainNavbar />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
       <div>
         <h2>Profile</h2>
         <p> Welcome {userData.first_name}</p>
