@@ -19,7 +19,6 @@ function useForm (callback, defaults) {
   // Funcion que se ejecuta cuando se escucha un cambio en el input
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    console.log(name, value)
     setInput({ ...input, [name]: value })
   }
 

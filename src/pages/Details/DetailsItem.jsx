@@ -1,8 +1,11 @@
 /* eslint-disable-next-line react/jsx-closing-tag-location */
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 import './details.css'
 import { Link } from 'react-router-dom'
 
 const DetailsItem = ({ details }) => {
+  const { isAuth } = useContext(AuthContext)
   return (
     <div className='detailsContainer'>
       <div className='cardContainer'>
@@ -16,6 +19,23 @@ const DetailsItem = ({ details }) => {
 
           <div className='button'>
             <button className='btn btn-primary' style={{ }}>Comprar</button>
+            {!isAuth
+              ? (
+                <>
+                  <p>Inicia Sesion para proceder a la compra</p>
+                  <div className='button'>
+                    <Link to='/login'><button className='btn btn-primary' style={{ }}>Iniciar Sesion</button></Link>
+                  </div>
+                </>
+                )
+              : (
+                <>
+                  <div className='button'>
+                    <button className='btn btn-primary' style={{ }}>Comprar</button>
+                  </div>
+                </>
+                )}
+
           </div>
         </div>
         <Link to='/' className='botOn'>

@@ -5,6 +5,7 @@ import useForm from '../../hooks/useForm'
 import { AuthContext } from '../../context/AuthContext'
 import { useContext } from 'react'
 import './login.css'
+import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext)
@@ -32,37 +33,40 @@ const Login = () => {
   })
 
   return (
-    <Form className='logForm' onSubmit={handleSubmit}>
-      <Form.Group className='mb-3' controlId='email'>
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type='email'
-          placeholder='Enter email'
-          name='email'
-          value={input.email}
-          onChange={handleInputChange}
-        />
-      </Form.Group>
+    <>
+      <MainNavbar />
+      <Form className='logForm' onSubmit={handleSubmit}>
+        <Form.Group className='mb-3' controlId='email'>
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type='email'
+            placeholder='Enter email'
+            name='email'
+            value={input.email}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
 
-      <Form.Group className='mb-3' controlId='password'>
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type='password'
-          placeholder='Password'
-          name='password'
-          value={input.password}
-          onChange={handleInputChange}
-        />
-      </Form.Group>
+        <Form.Group className='mb-3' controlId='password'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Password'
+            name='password'
+            value={input.password}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
 
-      <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-        <Form.Check type='checkbox' label='Check me out' />
-      </Form.Group>
+        <Form.Group className='mb-3' controlId='formBasicCheckbox'>
+          <Form.Check type='checkbox' label='Check me out' />
+        </Form.Group>
 
-      <Button variant='primary' type='submit'>
-        Log In
-      </Button>
-    </Form>
+        <Button variant='primary' type='submit'>
+          Log In
+        </Button>
+      </Form>
+    </>
   )
 }
 
