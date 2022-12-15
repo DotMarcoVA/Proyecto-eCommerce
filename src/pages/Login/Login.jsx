@@ -1,11 +1,14 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loginUserService } from '../../services/userServices'
 import { Button, Form } from 'react-bootstrap'
 import useForm from '../../hooks/useForm'
 import './login.css'
+import { AuthContext } from '../../context/AuthContext'
+import { useContext } from 'react'
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext)
+
   const navigate = useNavigate()
 
   const sendData = async (data) => {
@@ -13,9 +16,9 @@ const Login = () => {
       const response = await loginUserService(data)
       if (response.status === 200) {
         const token = response.data.token
-        window.localStorage.setItem('token', token)
+        // window.localStorage.setItem('token', token)
+        loginUser(token)
         navigate('/')
-
         console.log(response)
       }
     } catch (error) {
@@ -35,6 +38,7 @@ const Login = () => {
         <Form.Control
           type='email'
           placeholder='Enter email'
+          name='email'
           value={input.email}
           onChange={handleInputChange}
         />
@@ -45,6 +49,7 @@ const Login = () => {
         <Form.Control
           type='password'
           placeholder='Password'
+          name='password'
           value={input.password}
           onChange={handleInputChange}
         />
