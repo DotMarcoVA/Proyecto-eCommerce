@@ -60,8 +60,8 @@ const MainNavbar = () => {
                   )
                 : (
                   <>
-                    <Button variant='outline-dark' className='count-buttons'><Link to='/dashboard'>My Account</Link></Button>
-                    <Button className='count-buttons' variant='outline-danger' onClick={logout}><Link to='/' style={{ textDecoration: 'none' }}>Log Out</Link></Button>
+                    <Link style={{ textDecoration: 'none' }} to='/dashboard'><Button className='count-buttons'>My Account</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to='/'><Button className='count-buttons' variant='outline-danger' onClick={logout}>Logout</Button></Link>
                   </>
                   )
 }
