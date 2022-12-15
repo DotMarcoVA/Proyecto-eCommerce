@@ -1,10 +1,12 @@
 import React from 'react'
 import { Button, Form, InputGroup, FloatingLabel } from 'react-bootstrap'
 import './addProduct.css'
+import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
 
 const AddProduct = () => {
   return (
     <div>
+      <MainNavbar />
       <Form className='postProduct'>
         {/* controlId es el id del label y el input */}
         <Form.Group className='mb-3' controlId='first_name'>
