@@ -1,5 +1,4 @@
 /* eslint-disable-next-line react/jsx-closing-tag-location */
-import React from 'react'
 import './details.css'
 import { Link } from 'react-router-dom'
 
