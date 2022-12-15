@@ -1,0 +1,12 @@
+.postProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.input-group{
+    width: fit-content;
+}

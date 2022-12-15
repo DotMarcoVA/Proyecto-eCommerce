@@ -13,7 +13,7 @@ const Cards = ({ products }) => {
   const context = useProductsContext()
   return (
     <>
-      <Link to={`/details/${products._id}`}>
+      <Link to={`/details/${products._id}`} style={{ textDecoration: 'none' }}>
         <Card
           style={{ width: '15rem' }} onClick={() => {
             context.setSelectedItem(products._id)
@@ -26,7 +26,7 @@ const Cards = ({ products }) => {
             <Card.Text>
               {products.description}
             </Card.Text>
-            <Button variant='primary'>Go somewhere</Button>
+            <Button variant='primary'>Ver Detalles</Button>
           </Card.Body>
         </Card>
       </Link>

@@ -1,15 +1,15 @@
 import React from 'react'
 import './MainNavbar.css'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
-import { BsFillCartFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-// import { BsFillCartFill } from 'react-icons/bs'
 
 const MainNavbar = () => {
   return (
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
       <Container fluid>
-        <Navbar.Brand href='#'>Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href='#'>
+          <img src='./src/assets/cat.png' alt='logo' />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
           <Nav
@@ -17,12 +17,17 @@ const MainNavbar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href='#action1'>Home</Nav.Link>
+            <Link to='/addproduct'>
+              <Button variant='outline-info'>Add New Product</Button>{' '}
+            </Link>
           </Nav>
-          <div className='cart-icon'>
-            <BsFillCartFill /> icono carrito de compras
-          </div>
-          <Form className='d-flex'>
+
+          <Form className='customer d-flex'>
+            <input
+              className='shopping-cart'
+              type='image' id='image' alt='Login'
+              src='./src/assets/cart.png'
+            />
             <Form.Control
               type='search'
               placeholder='Search'
@@ -31,9 +36,11 @@ const MainNavbar = () => {
             />
             <Button variant='info'>Search</Button>
           </Form>
+
           <Nav className='count-buttons'>
             <Link to='/login'><Button className='count-buttons'>Log in</Button></Link>
             <Link to='/signup'><Button className='count-buttons'>Sign up</Button></Link>
+            <Button className='count-buttons' variant='outline-danger'>Log Out</Button>
           </Nav>
         </Navbar.Collapse>
         <div className='vr' />
