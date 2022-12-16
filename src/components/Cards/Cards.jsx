@@ -10,6 +10,12 @@ import { Link } from 'react-router-dom'
 
 
 const Cards = ({ products }) => {
+  const placeholderImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'
+
+  const handleImageError = (e) => {
+    e.target.src = placeholderImage
+  }
+
   const context = useProductsContext()
   return (
     <>
@@ -20,7 +26,7 @@ const Cards = ({ products }) => {
             console.log(context.item) 
           }}
         >
-          <Card.Img variant='top' src={products.image} />
+          <Card.Img variant='top' src={products.image} onError={handleImageError} />
           <Card.Body>
             <Card.Title>{products.product_name}</Card.Title>
             <Card.Text>
