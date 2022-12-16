@@ -72,27 +72,27 @@ const AddProduct = () => {
           onChange={handleInputChange}
         >
           <option>Select a category</option>
-          <option value='1'>Books</option>
-          <option value='2'>Movies</option>
-          <option value='3'>Music</option>
-          <option value='4'>Electronics</option>
-          <option value='5'>Computers</option>
-          <option value='6'>Home</option>
-          <option value='7'>Garden</option>
-          <option value='8'>Tools</option>
-          <option value='9'>Grocery</option>
-          <option value='10'>Health</option>
-          <option value='11'>Beauty</option>
-          <option value='12'>Toys</option>
-          <option value='13'>Kids</option>
-          <option value='14'>Baby</option>
-          <option value='15'>Clothing</option>
-          <option value='16'>Shoes</option>
-          <option value='17'>Jewelry</option>
-          <option value='18'>Sports</option>
-          <option value='19'>Outdoors</option>
-          <option value='20'>Automotive</option>
-          <option value='21'>Industrial</option>
+          <option value='Books'>Books</option>
+          <option value='Movies'>Movies</option>
+          <option value='Music'>Music</option>
+          <option value='Electronics'>Electronics</option>
+          <option value='Computers'>Computers</option>
+          <option value='Home'>Home</option>
+          <option value='Garden'>Garden</option>
+          <option value='Tools'>Tools</option>
+          <option value='Grocery'>Grocery</option>
+          <option value='Health'>Health</option>
+          <option value='Beauty'>Beauty</option>
+          <option value='Toys'>Toys</option>
+          <option value='Kids'>Kids</option>
+          <option value='Baby'>Baby</option>
+          <option value='Clothing'>Clothing</option>
+          <option value='Shoes'>Shoes</option>
+          <option value='Jewelry'>Jewelry</option>
+          <option value='Sports'>Sports</option>
+          <option value='Outdoors'>Outdoors</option>
+          <option value='Automotive'>Automotive</option>
+          <option value='Industrial'>Industrial</option>
         </Form.Select>
 
         <Form.Group className='mb-3' controlId='brand'>
