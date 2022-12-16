@@ -2,42 +2,75 @@ import React from 'react'
 import { Button, Form, InputGroup, FloatingLabel } from 'react-bootstrap'
 import './addProduct.css'
 import MainNavbar from '../../components/MainNavbar.jsx/MainNavbar'
+import useForm from '../../hooks/useForm'
+import { postProductService } from '../../services/userServices'
 
 const AddProduct = () => {
+  const sendData = async (data) => {
+    try {
+      const response = await postProductService(data)
+      if (response.status === 200) {
+        console.log(response)
+      }
+    } catch (error) {
+      console.log('Error: ', error)
+    }
+  }
+
+  const { input, handleInputChange, handleSubmit } = useForm(sendData, {
+    isActive: true,
+    product_name: '',
+    description: '',
+    price: 0,
+    category: '',
+    brand: '',
+    sku: '',
+    image: ''
+
+  })
+
   return (
     <div>
       <MainNavbar />
-      <Form className='postProduct'>
+      <Form className='postProduct' onSubmit={handleSubmit}>
         {/* controlId es el id del label y el input */}
         <Form.Group className='mb-3' controlId='first_name'>
           <Form.Label>Product Name</Form.Label>
           <Form.Control
             type='text'
-            id='product_name'
             name='product_name'
+            value={input.product_name}
+            onChange={handleInputChange}
           />
         </Form.Group>
 
-        <Form.Group className='mb-3' controlId='first_name'>
+        <Form.Group className='mb-3' controlId='sku'>
           <Form.Label>Sku</Form.Label>
           <Form.Control
             type='text'
-            id='sku'
             name='sku'
+            value={input.sku}
+            onChange={handleInputChange}
           />
         </Form.Group>
 
-        <Form.Group className='mb-3' controlId='first_name'>
+        <Form.Group className='mb-3' controlId='img'>
           <Form.Label>Image Link</Form.Label>
           <Form.Control
             type='text'
-            id='img'
-            name='img'
+            name='image'
+            value={input.image}
+            onChange={handleInputChange}
           />
         </Form.Group>
 
         <Form.Label>Category</Form.Label>
-        <Form.Select aria-label='Default select example'>
+        <Form.Select
+          aria-label='Default select example'
+          name='category'
+          value={input.category}
+          onChange={handleInputChange}
+        >
           <option>Select a category</option>
           <option value='1'>Books</option>
           <option value='2'>Movies</option>
@@ -62,18 +95,22 @@ const AddProduct = () => {
           <option value='21'>Industrial</option>
         </Form.Select>
 
-        <Form.Group className='mb-3' controlId='first_name'>
+        <Form.Group className='mb-3' controlId='brand'>
           <Form.Label>Brand</Form.Label>
           <Form.Control
             type='text'
-            id='brand'
             name='brand'
+            value={input.brand}
+            onChange={handleInputChange}
           />
         </Form.Group>
 
         <InputGroup className='mb-3'>
           <InputGroup.Text>$</InputGroup.Text>
-          <Form.Control placeholder='Precio' />
+          <Form.Control
+            placeholder='Precio' name='price' value={input.price}
+            onChange={handleInputChange}
+          />
           <InputGroup.Text>.00</InputGroup.Text>
         </InputGroup>
 
@@ -82,6 +119,9 @@ const AddProduct = () => {
             as='textarea'
             placeholder='Leave a description here'
             style={{ height: '100px' }}
+            name='description'
+            value={input.description}
+            onChange={handleInputChange}
           />
         </FloatingLabel>
 
